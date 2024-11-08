@@ -1,0 +1,20 @@
+{% extends "blogapp/base.html" %}
+{% load static %}
+{% block title %} Home {% endblock title %}
+{% block content %}
+<div class="col-sm-10 offset-1">
+    <h3 class="my-5">Mini Blog</h3>
+
+    {% for posts in post %}
+    {% comment %} bootstrap---jumbotron Use {% endcomment %}
+    <div class="jumbotron jumbotron-fluid jumbo-color">
+        <div class="container">
+          <h1 class="display-4 blog-title">{{posts.title}}</h1><br>
+            <p class="lead">{{posts.description}}</p>
+        </div>
+    </div> <br><br>
+    {% endfor %}
+
+</div>
+
+{% endblock content %}
